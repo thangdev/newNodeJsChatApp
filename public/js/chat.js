@@ -1,6 +1,6 @@
 var socket = io();
 
-function scrollToBottom () {
+function scrollToBottom() {
   // Selectors
   var messages = jQuery('#messages');
   var newMessage = messages.children('li:last-child')
@@ -73,7 +73,6 @@ jQuery('#message-form').on('submit', function (e) {
   e.preventDefault();
 
   var messageTextbox = jQuery('[name=message]');
-
   socket.emit('createMessage', {
     text: messageTextbox.val()
   }, function () {
